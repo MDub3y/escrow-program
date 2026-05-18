@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
 use anchor_spl::token_interface::{
-    transfer_checked, TokenAccount, TokenInterface, TransferChecked,
+    transfer_checked, Mint, TokenAccount, TokenInterface, TransferChecked,
 };
 
 pub fn transfer_tokens<'info>(
