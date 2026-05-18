@@ -1,6 +1,10 @@
 use super::shared::transfer_tokens;
-use crate::state::Offer;
+use crate::{error::ErrorCode, state::Offer};
 use anchor_lang::prelude::*;
+use anchor_spl::{
+    associated_token::AssociatedToken,
+    token_interface::{Mint, TokenAccount, TokenInterface},
+};
 
 #[derive(Accounts)]
 #[instruction(id: u64)]

@@ -1,5 +1,7 @@
 use anchor_lang::prelude::*;
 
+pub mod error;
+pub mod handlers;
 pub mod state;
 
 declare_id!("B2fbWZXvAZGdjBV7bwt5LzsD5VPwwf6errc134sVHzdr");
