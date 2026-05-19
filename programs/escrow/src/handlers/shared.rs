@@ -51,9 +51,9 @@ pub fn close_token_account<'info>(
         authority: authority.to_account_info(),
     };
 
-    let signer_seeds = owning_pda_seeds.map(|seeds| [seeds]);
+    let signers_seeds = owning_pda_seeds.map(|seeds| [seeds]);
 
-    close_account(if let Some(seeds_arr) = signer_seeds.as_ref() {
+    close_account(if let Some(seeds_arr) = signers_seeds.as_ref() {
         CpiContext::new_with_signer(token_program.to_account_info(), close_accounts, seeds_arr)
     } else {
         CpiContext::new(token_program.to_account_info(), close_accounts)
